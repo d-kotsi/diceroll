@@ -28,7 +28,7 @@
 
     <p id="selected-color"></p>
 
-    <button id="pick-random-color" onclick="pickRandomColor()">Pick Random Color</button>
+    <button id="pick-random-color" onclick="pickRandomColor()">🆗</button>
 
     <script>
         const colors = ["#ffa6a6", "#ffcda6", "#fff1a6", "#a7ffa6", "#a6e0ff", "#c7a6ff", "#e2e2e2", "#b1b1b1", "#494949", "#6c543a"];
@@ -39,7 +39,7 @@
 
             // Display the selected color
             const selectedColorElement = document.getElementById("selected-color");
-            selectedColorElement.textContent = `Random Color: ${selectedColor}`;
+            selectedColorElement.textContent = ``;
 
             // Change the background color of the entire page
             document.body.style.backgroundColor = selectedColor;
