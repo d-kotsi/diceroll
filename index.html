@@ -24,7 +24,7 @@
     <button id="generate-button" onclick="generateRandomNumber()">🆗</button>
     <p id="random-number"></p>
 
-    <script>
+    <script><p style="font-size: 12px;">
         function generateRandomNumber() {
             const min = parseInt(document.getElementById("min-input").value);
             const max = parseInt(document.getElementById("max-input").value);
@@ -36,6 +36,6 @@
                 document.getElementById("random-number").textContent = `Number: ${randomNumber}`;
             }
         }
-    </script>
+    </p> </script>
 </body>
 </html>
