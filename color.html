@@ -4,25 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Color Picker</title>
+      <style>
+        body {
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+        #random-number {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <style>
+        body {
+            text-align: center; /* Center align text within the body */
+        }
+        h1 {
+            text-align: center; /* Center align the h1 element */
+        }
+    </style>
 </head>
 <body>
     <h1>Random Color Picker</h1>
-
-    <label for="color-select">Select a color:</label>
-    <select id="color-select">
-        <option value="red">Red</option>
-        <option value="green">Green</option>
-        <option value="blue">Blue</option>
-        <option value="yellow">Yellow</option>
-        <option value="orange">Orange</option>
-    </select>
 
     <p id="selected-color"></p>
 
     <button id="pick-random-color" onclick="pickRandomColor()">Pick Random Color</button>
 
     <script>
-        const colors = ["red", "green", "blue", "yellow", "orange"];
+        const colors = ["#ffa6a6", "#ffcda6", "#fff1a6", "#a7ffa6", "#a6e0ff", "#c7a6ff", "#e2e2e2", "#b1b1b1", "#494949", "#6c543a"];
 
         function pickRandomColor() {
             const randomIndex = Math.floor(Math.random() * colors.length);
@@ -31,8 +40,9 @@
             // Display the selected color
             const selectedColorElement = document.getElementById("selected-color");
             selectedColorElement.textContent = `Random Color: ${selectedColor}`;
-            
-            // You can also apply the selected color to other elements here.
+
+            // Change the background color of the entire page
+            document.body.style.backgroundColor = selectedColor;
         }
 
         // Add an event listener to the button
