@@ -6,7 +6,7 @@
     <title>Random Color Generator</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: Georgia, serif;
             text-align: center;
         }
         #color-display {
@@ -16,8 +16,8 @@
     </style>
 </head>
 <body>
-    <h1>Random Color Generator</h1>
-    <button id="generate-button" onclick="generateRandomColor()">Generate Random Color</button>
+    <h1>Random Color</h1>
+    <button id="generate-button" onclick="generateRandomColor()">🆗</button>
     <p id="color-display"></p>
 
     <script>
@@ -30,7 +30,7 @@
                 color += letters[Math.floor(Math.random() * 16)];
             }
 
-            document.getElementById("color-display").textContent = `Random Color: ${color}`;
+            document.getElementById("color-display").textContent = ``;
             document.body.style.backgroundColor = color;
         }
     </script>
