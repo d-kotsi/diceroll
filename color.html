@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #color-display {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Color Generator</h1>
+    <button id="generate-button" onclick="generateRandomColor()">Generate Random Color</button>
+    <p id="color-display"></p>
+
+    <script>
+        function generateRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+
+            // Generate a random hex color code (e.g., #RRGGBB)
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            document.getElementById("color-display").textContent = `Random Color: ${color}`;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>
