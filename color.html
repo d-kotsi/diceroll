@@ -3,36 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Color Generator</title>
-    <style>
-        body {
-            font-family: Georgia, serif;
-            text-align: center;
-        }
-        #color-display {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>Random Color Picker</title>
 </head>
 <body>
-    <h1>Random Color</h1>
-  <p style="font-size: 16px;">  <button id="generate-button" onclick="generateRandomColor()">🆗</button></p>
-    <p id="color-display"></p>
+    <h1>Random Color Picker</h1>
+
+    <label for="color-select">Select a color:</label>
+    <select id="color-select">
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+    </select>
+
+    <p id="selected-color"></p>
+
+    <button id="pick-random-color" onclick="pickRandomColor()">Pick Random Color</button>
 
     <script>
-        function generateRandomColor() {
-            const letters = "0123456789ABCDEF";
-            let color = "#";
+        const colors = ["red", "green", "blue", "yellow", "orange"];
 
-            // Generate a random hex color code (e.g., #RRGGBB)
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
+        function pickRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const selectedColor = colors[randomIndex];
 
-            document.getElementById("color-display").textContent = ``;
-            document.body.style.backgroundColor = color;
+            // Display the selected color
+            const selectedColorElement = document.getElementById("selected-color");
+            selectedColorElement.textContent = `Random Color: ${selectedColor}`;
+            
+            // You can also apply the selected color to other elements here.
         }
+
+        // Add an event listener to the button
+        const pickRandomColorButton = document.getElementById("pick-random-color");
+        pickRandomColorButton.addEventListener("click", pickRandomColor);
     </script>
 </body>
 </html>
