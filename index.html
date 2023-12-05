@@ -23,24 +23,19 @@
     <input type="number" id="max-input" value="100"><br><br>
     <button id="generate-button" onclick="generateRandomNumber()">🆗</button>
     <p id="random-number"></p>
-<script>
-    function generateRandomNumber() {
-        const min = parseInt(document.getElementById("min-input").value);
-        const max = parseInt(document.getElementById("max-input").value);
+  <script>
+        function generateRandomNumber() {
+            const min = parseInt(document.getElementById("min-input").value);
+            const max = parseInt(document.getElementById("max-input").value);
 
-        if (isNaN(min) || isNaN(max) || min >= max) {
-            alert("Please enter valid minimum and maximum values.");
-        } else {
-            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-            const randomNumElement = document.getElementById("random-number");
-
-            // Change the font size of the generated number
-            randomNumElement.style.fontSize = "13px"; // Change the font size to your desired value
-
-            randomNumElement.textContent = `Number: ${randomNumber}`;
+            if (isNaN(min) || isNaN(max) || min >= max) {
+                alert("Please enter valid minimum and maximum values.");
+            } else {
+                const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                document.getElementById("random-number").textContent = `Number: ${randomNumber}`;
+            }
         }
-    }
-</script>
+   </script>
 
 </body>
 </html>
