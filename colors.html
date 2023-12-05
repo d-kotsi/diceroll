@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color</title>
+      <style>
+        body {
+            font-family: Georgia, serif;
+            text-align: center;
+        }
+        #random-number {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+    <style>
+        body {
+            text-align: center; /* Center align text within the body */
+        }
+        h1 {
+            text-align: center; /* Center align the h1 element */
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Color</h1>
+
+    <p id="selected-color"></p>
+
+    <button id="pick-random-color" onclick="pickRandomColor()">🆗</button>
+
+    <script>
+        const colors = ["#ffa6a6", "#ffcda6", "#fff1a6", "#a7ffa6", "#a6e0ff", "#c7a6ff", "#e2e2e2", "#b1b1b1", "#494949", "#6c543a"];
+
+        function pickRandomColor() {
+            const randomIndex = Math.floor(Math.random() * colors.length);
+            const selectedColor = colors[randomIndex];
+
+            // Display the selected color
+            const selectedColorElement = document.getElementById("selected-color");
+            selectedColorElement.textContent = ``;
+
+            // Change the background color of the entire page
+            document.body.style.backgroundColor = selectedColor;
+        }
+
+        // Add an event listener to the button
+        const pickRandomColorButton = document.getElementById("pick-random-color");
+        pickRandomColorButton.addEventListener("click", pickRandomColor);
+    </script>
+</body>
+</html>
